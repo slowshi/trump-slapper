@@ -18,15 +18,15 @@ define(['app',
 		};
 	});
 	app.registerController('TrumpFaceController',
-	['$scope', 'cssInjector', 'clickerGameService', 'trumpFaceService', '$element',
-	function($scope, cssInjector, clickerGameService, trumpFaceService, $element) {
+	['$scope', 'cssInjector', 'trumpFaceService', '$element',
+	function($scope, cssInjector, trumpFaceService, $element) {
 		cssInjector.add('/home/trump-face/index.css');
 		var _this = this;
 		_this.trumpFaceService = trumpFaceService;
-		_this.clickerGameService = clickerGameService;
-		_this.smackTrump = function smackTrump() {
-			_this.trumpFaceService.hitFace($element);
-			_this.clickerGameService.addClicks();
+		_this.trumpFaceService.faceData.element = $element;
+		_this.smackTrump = function smackTrump($event) {
+			_this.trumpFaceService.updateHandPos($event);
+			_this.trumpFaceService.hitFace();
 		};
 	}]);
 });

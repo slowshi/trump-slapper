@@ -3,6 +3,7 @@
 	margin: 0 auto;
 	width:400px;
 	height:400px;
+	cursor:pointer;
 	background-size: 100% 100%;
 	background-image: url('/home/images/trump1.png');
 }

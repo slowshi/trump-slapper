@@ -1,15 +1,18 @@
 define([], function() {
-    var initialState = {};
-    var ChatUserService = function(state, action) {
+    var initialState = {
+        x: 0,
+        y: 0,
+    };
+    var HandPos = function(state, action) {
         if(typeof state === 'undefined') {
             state = initialState;
         }
         switch (action.type) {
-            case 'updateUserList':
-                state = action.userList;
+            case 'updateHandPos':
+                state = action.pos;
             break;
         }
         return state;
     };
-    return ChatUserService;
+    return HandPos;
 });

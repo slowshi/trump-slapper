@@ -1,20 +1,21 @@
 define([
 	'app',
-	'./clicker-game-service/index.js',
 	'./trump-face/index.js',
-	'./hand-cursor/index.js',
+	'./scoreboard/index.js',
 	],
 function(app) {
 	app.registerController('TrumpSlapperController',
-	['$scope', 'cssInjector', 'clickerGameService', '$element',
-	function($scope, cssInjector, clickerGameService, $element) {
+	['$scope', 'cssInjector','storeService',
+	function($scope, cssInjector, storeService) {
 		cssInjector.add('/home/index.css');
+		cssInjector.add('/css/bootstrap.min.css');
 		var _this = this;
-		_this.clickerGameService = clickerGameService;
-
-		$element.on('mousemove', function(event) {
-			_this.clickerGameService.updateCursorPos(event);
-			$scope.$apply();
-		});
+		var onUpdate = function(){
+			var phase = $scope.$$phase;
+			if( phase != '$apply' && phase != '$digest') {
+				$scope.$digest();
+			}
+		}
+		storeService.store.subscribe(onUpdate);
 	}]);
 });
