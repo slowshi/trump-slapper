@@ -66,7 +66,7 @@ define([
 			$timeout(resetFace, 200);
 			faceData.responseCount = 0;
 			cancelAudio();
-			storeService.store.dispatch({type: 'addClicks'});
+			storeService.store.dispatch({type: 'addSlaps'});
 		};
 		return {
 			faceData: faceData,

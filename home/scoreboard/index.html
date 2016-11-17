@@ -1,3 +1,12 @@
 <div class="scoreboard">
-  <span class="slap-count">{{ctrl.scoreboardService.scoreboard.clicks}} Slaps</span>
+  <span class="slap-count">{{ctrl.scoreboardService.scoreboard.slaps}} Slaps</span>
+  <button ng-repeat="upgrade in ctrl.scoreboardService.scoreboard.upgrades track by $index" 
+          ng-if="upgrade.visible"
+          ng-disabled="!upgrade.enabled"
+          ng-click="ctrl.scoreboardService.addUpgrade(upgrade.name)">
+    {{upgrade.name}} || {{upgrade.cost}}
+    </button>
+    <p>Per Slap: {{ctrl.scoreboardService.scoreboard.perSlap}}</p>
+    <p>Slaps per Sec: {{ctrl.scoreboardService.scoreboard.perSec}}</p>
+    <p>Total Slaps: {{ctrl.scoreboardService.scoreboard.totalSlaps}}</p>
 </div>
