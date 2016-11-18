@@ -1,6 +1,6 @@
 define([], function() {
-	var states = {
+  var states = {
 
-		};
-	return states;
+  };
+  return states;
 });

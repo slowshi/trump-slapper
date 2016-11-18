@@ -1,8 +1,8 @@
 define([
-	'app',
-	'./index-impl.js',
-	'store-service',
+  'app',
+  './index-impl.js',
+  'store-service'
 ], function(app, HandCursorService) {
-	app.registerService('handCursorService',
-	['storeService', '$timeout', HandCursorService]);
+  app.registerService('handCursorService',
+	[HandCursorService]);
 });
