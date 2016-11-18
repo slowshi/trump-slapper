@@ -2,7 +2,7 @@ define([], function() {
   var Upgrades = [
     {
       id: 1,
-      name: 'America',
+      name: 'Americans',
       baseCost: 15,
       change: {
         perSlap: 0.1
@@ -10,7 +10,7 @@ define([], function() {
     },
     {
       id: 2,
-      name: 'Europe',
+      name: 'Democrats',
       baseCost: 100,
       change: {
         perSec: 1
@@ -18,7 +18,7 @@ define([], function() {
     },
     {
       id: 3,
-      name: 'China',
+      name: 'Mexico',
       baseCost: 500,
       change: {
         perSec: 4
@@ -26,7 +26,7 @@ define([], function() {
     },
     {
       id: 4,
-      name: 'Mexico',
+      name: 'Syrian Refugees',
       baseCost: 3000,
       change: {
         perSec: 10
@@ -34,7 +34,7 @@ define([], function() {
     },
     {
       id: 5,
-      name: 'LGBT Community',
+      name: 'China',
       baseCost: 10000,
       change: {
         perSec: 40
@@ -42,7 +42,7 @@ define([], function() {
     },
     {
       id: 6,
-      name: 'Syrian Refugees',
+      name: 'Scientists',
       baseCost: 40000,
       change: {
         perSec: 100
@@ -50,7 +50,7 @@ define([], function() {
     },
     {
       id: 7,
-      name: 'Climate Change',
+      name: 'Women',
       baseCost: 200000,
       change: {
         perSec: 400
@@ -58,7 +58,7 @@ define([], function() {
     },
     {
       id: 8,
-      name: 'Ted Cruz',
+      name: '??',
       baseCost: 1666666,
       change: {
         perSec: 6666

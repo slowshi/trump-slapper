@@ -1,8 +1,11 @@
 <div>
-  <button ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
+  <button type="button"
+          class="btn btn-secondary btn-block"
+          ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
           ng-if="upgrade.visible"
           ng-disabled="!upgrade.enabled"
           ng-click="UpgradeIconCtrl.upgradeIconService.buyUpgrade(upgrade.id)">
-    {{upgrade.name}} || {{upgrade.cost}}
+    <p>{{upgrade.name}} <span class="pull-right">{{upgrade.count}}</span></p>
+    {{upgrade.cost}}
   </button>
 </div>

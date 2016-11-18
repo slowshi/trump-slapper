@@ -1,6 +1,5 @@
 define(['app',
-  './scoreboard-service/index.js',
-  '../upgrade-icon/index.js'], function(app) {
+  './scoreboard-service/index.js'], function(app) {
   app.registerDirective('scoreboard', function() {
     return {
       restrict: 'E',

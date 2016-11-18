@@ -1,7 +1,8 @@
 define([
   'app',
   './trump-face/index.js',
-  './scoreboard/index.js'
+  './scoreboard/index.js',
+  './upgrade-icon/index.js'
 ],
 function(app) {
   app.registerController('TrumpSlapperController',

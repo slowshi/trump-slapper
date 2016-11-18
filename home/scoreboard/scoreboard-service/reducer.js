@@ -1,5 +1,5 @@
 define([
-  './upgrades.js',
+  'home/upgrades.js',
   'lodash'], function(upgrades, _) {
   var upgradeList = _.cloneDeep(upgrades);
   for (var i = 0; i < upgradeList.length; i++) {

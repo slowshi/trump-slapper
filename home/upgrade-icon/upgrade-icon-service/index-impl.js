@@ -1,6 +1,4 @@
-define([
-  'lodash',
-  'home/scoreboard/scoreboard-service/upgrades.js'], function(_, upgradeData) {
+define(['lodash'], function(_) {
   var UpgradeIconService = function(storeService) {
     var data = {
       upgrades: []
@@ -15,12 +13,6 @@ define([
           Math.ceil(upgrade.baseCost * Math.pow(1.07, upgrade.count));
         upgrade.enabled = scoreboard.slaps >= upgrade.cost;
         upgrade.visible = scoreboard.highestUpgrade >= i;
-        // if (scoreboard.slaps >= upgrade.cost) {
-        //   nextUpgrade++;
-        //   if (nextUpgrade >= scoreboard.highestUpgrade) {
-        //     state.highestUpgrade = nextUpgrade;
-        //   }
-        // }
       }
       data.upgrades = upgrades;
     };
