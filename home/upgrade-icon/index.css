@@ -1,0 +1,20 @@
+@media only screen and (min-width: 0px) and (max-width: 768px) and (orientation : portrait) {
+    .upgrades-icon {
+        height:calc(100vh - 481px);
+        overflow:hidden;
+        overflow-y:scroll;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1420px) {
+    .upgrades-icon {
+        height:calc(100vh - 34px);
+        overflow:hidden;
+        overflow-y:scroll;
+    }
+}    
+.actions{
+    width:100%;
+    height:34px;
+    position:relative;
+    display:block;
+}

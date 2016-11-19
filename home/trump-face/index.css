@@ -1,12 +1,14 @@
-.trump-face{
-	position:relative;
+.trump-face {
+	position: relative;
 	margin: 0 auto;
-	width:345px;
-	height:345px;
-	cursor:pointer;
+	height: calc(100vw - 30px);
+	width: calc(100vw - 30px);
+	max-width: 375px;
+	max-height: 375px;
+	cursor: pointer;
 	background-size: 100% 100%;
 	background-image: url('/home/images/trump1.png');
 }
-.trump-face-owe{
+.trump-face-owe {
 	background-image: url('/home/images/owe.jpeg');
 }

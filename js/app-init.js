@@ -39,7 +39,7 @@ define(['app', 'states'], function(app, states) {
                 deps: couchPotatoProvider
 							.resolveDependencies(['/home/index.js'])
               },
-              controller: 'TrumpSlapperController as ctrl'
+              controller: 'TrumpSlapperController as TrumpSlapperCtrl'
             }
           }
         });

@@ -1,11 +1,29 @@
-<div>
-  <button type="button"
-          class="btn btn-secondary btn-block"
-          ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
+<div class="upgrades-icon">
+  <div class="list-group">
+    <div  ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
           ng-if="upgrade.visible"
-          ng-disabled="!upgrade.enabled"
-          ng-click="UpgradeIconCtrl.upgradeIconService.buyUpgrade(upgrade.id)">
-    <p>{{upgrade.name}} <span class="pull-right">{{upgrade.count}}</span></p>
-    {{upgrade.cost}}
-  </button>
+          class="list-group-item">
+      <p>{{upgrade.name}} <span class="float-xs-right"><span class="fa fa-hand-paper-o"></span>{{upgrade.count}}</span></p>
+      <div class="actions">
+        <button type="button"
+                ng-repeat="powerup in upgrade.powerups track by $index" 
+                class="btn"
+                ng-class="{
+                  'btn-outline-primary' : powerup.enabled && powerup.count === 0,
+                  'btn-success' : powerup.count === 1 
+                }"
+                ng-disabled="!powerup.enabled"
+                ng-if="powerup.visible"
+                ng-click="UpgradeIconCtrl.upgradeIconService.buyPowerup(powerup.id)">
+                {{powerup.cost}}
+        </button>
+        <button type="button"
+                class="btn btn-secondary float-xs-right"
+                ng-disabled="!upgrade.enabled"
+                ng-click="UpgradeIconCtrl.upgradeIconService.buyUpgrade(upgrade.id)">
+              {{upgrade.cost}}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
