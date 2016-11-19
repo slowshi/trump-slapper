@@ -10,21 +10,15 @@ module.exports = {
     } else {
       filePath += '.' + req.url;
     }
-		// console.log("Requesting Page: "+ filePath);
+		console.log("Requesting Page: "+ filePath);
     module.exports.validatePage(res, filePath);
   },
   validatePage: function(res, filePath) {
-    fs.exists(filePath, function(exists) {
-      if (exists) {
-        fs.readFile(filePath, function(err, data) {
-          if (err) {
-            module.exports.get404(res);
-          } else {
-            module.exports.getPage(res, filePath, data);
-          }
-        });
-      } else {
+    fs.readFile(filePath, function(err, data) {
+      if (err) {
         module.exports.get404(res);
+      } else {
+        module.exports.getPage(res, filePath, data);
       }
     });
   },

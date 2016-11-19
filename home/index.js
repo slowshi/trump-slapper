@@ -10,7 +10,6 @@ function(app) {
       function($scope, cssInjector, storeService, $interval) {
         cssInjector.add('/home/index.css');
         cssInjector.add('/js/vendors/bootstrap/4.0.0/css/bootstrap.min.css');
-        cssInjector.add('/js/vendors/font-awesome/css/font-awesome.min.css');
         var onUpdate = function() {
           var phase = $scope.$$phase;
           if (phase !== '$apply' && phase !== '$digest') {
