@@ -24,7 +24,9 @@ define(['lodash'], function(_) {
         }
         for (var k = 0; k < upgrade.powerups.length; k++) {
           var upgradePowerup = upgrade.powerups[k];
-          upgradePowerup.enabled = scoreboard.slaps >= upgradePowerup.cost;
+          upgradePowerup.enabled =
+            scoreboard.slaps >= upgradePowerup.cost &&
+            upgrade.count >= upgradePowerup.level;
           upgradePowerup.visible =
             upgrade.highestPowerup >= k && upgrade.visible && upgrade.count > 0;
           if (upgrade.count >= upgradePowerup.level) {
