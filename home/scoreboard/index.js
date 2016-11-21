@@ -7,7 +7,7 @@ define(['app',
       scope: {
 
       },
-      templateUrl: '/home/scoreboard/index.html',
+      templateUrl: 'home/scoreboard/index.html',
       replace: true,
       controller: 'ScoreboardController',
       controllerAs: 'ctrl',
@@ -18,7 +18,7 @@ define(['app',
   app.registerController('ScoreboardController',
     ['$scope', 'cssInjector', 'scoreboardService', '$element',
       function($scope, cssInjector, scoreboardService) {
-        cssInjector.add('/home/scoreboard/index.css');
+        cssInjector.add('home/scoreboard/index.css');
         var _this = this;
         _this.scoreboardService = scoreboardService;
       }]);

@@ -7,7 +7,7 @@ define(['app',
       scope: {
 
       },
-      templateUrl: '/home/trump-face/index.html',
+      templateUrl: 'home/trump-face/index.html',
       replace: true,
       controller: 'TrumpFaceController',
       controllerAs: 'ctrl',
@@ -18,7 +18,7 @@ define(['app',
   app.registerController('TrumpFaceController',
     ['$scope', 'cssInjector', 'trumpFaceService', '$element',
       function($scope, cssInjector, trumpFaceService, $element) {
-        cssInjector.add('/home/trump-face/index.css');
+        cssInjector.add('home/trump-face/index.css');
         var _this = this;
         _this.trumpFaceService = trumpFaceService;
         _this.trumpFaceService.faceData.element = $element;

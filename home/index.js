@@ -8,8 +8,8 @@ function(app) {
   app.registerController('TrumpSlapperController',
     ['$scope', 'cssInjector', 'storeService', '$interval',
       function($scope, cssInjector, storeService, $interval) {
-        cssInjector.add('/home/index.css');
-        cssInjector.add('/js/vendors/bootstrap/4.0.0/css/bootstrap.min.css');
+        cssInjector.add('home/index.css');
+        cssInjector.add('js/vendors/bootstrap/4.0.0/css/bootstrap.min.css');
         var onUpdate = function() {
           var phase = $scope.$$phase;
           if (phase !== '$apply' && phase !== '$digest') {

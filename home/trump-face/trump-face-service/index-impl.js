@@ -15,11 +15,11 @@ define([
     };
     createjs.Sound.alternateExtensions = ['mp3'];
     createjs.Sound
-		.registerSound('/home/images/wrong.mp3', 'wrong');
+		.registerSound('home/images/wrong.mp3', 'wrong');
     createjs.Sound
-		.registerSound('/home/images/sitdown.mp3', 'sitdown');
+		.registerSound('home/images/sitdown.mp3', 'sitdown');
     createjs.Sound
-		.registerSound('/home/images/slap.mp3', 'slap');
+		.registerSound('home/images/slap.mp3', 'slap');
     storeService.addReducer('handPos', reducer);
 
     var updateHandPos = function updateHandPos() {

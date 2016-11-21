@@ -7,7 +7,7 @@ define(['app',
       scope: {
 
       },
-      templateUrl: '/home/upgrade-icon/index.html',
+      templateUrl: 'home/upgrade-icon/index.html',
       replace: true,
       controller: 'UpgradeIconController',
       controllerAs: 'UpgradeIconCtrl',
@@ -18,7 +18,7 @@ define(['app',
   app.registerController('UpgradeIconController',
     ['$scope', 'cssInjector', 'upgradeIconService',
       function($scope, cssInjector, upgradeIconService) {
-        cssInjector.add('/home/upgrade-icon/index.css');
+        cssInjector.add('home/upgrade-icon/index.css');
         this.upgradeIconService = upgradeIconService;
       }]);
 });
