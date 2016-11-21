@@ -25,7 +25,7 @@ define([
         var storeObj = JSON.parse(decodedString);
         return storeObj;
       }
-      return null;
+      return false;
     };
     var saveLocalStorage = function saveLocalStorage() {
       var storeClone = _.cloneDeep(store.getState());

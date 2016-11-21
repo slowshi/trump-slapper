@@ -19,6 +19,7 @@ define(['./reducer.js'], function(reducer) {
     storeService.store.subscribe(updateScoreboard);
     var storageObj = storeService.loadLocalStorage();
     if (storageObj) {
+      console.log(storageObj);
       storeService.store.dispatch({
         type: 'loadFromStorage',
         localStorage: storageObj
