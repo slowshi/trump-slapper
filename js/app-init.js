@@ -1,4 +1,4 @@
-define(['app', 'states'], function(app, states) {
+define(['app'], function(app) {
   var appInit = function() {
     var stateProvider;
     var couchPotatoProvider;
@@ -26,34 +26,15 @@ define(['app', 'states'], function(app, states) {
         app.lazy = $couchPotato;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-
-        stateProvider.state('root', {
-          url: 'trump-slapper/',
-          views: {
-            'main@': {
-              templateUrl: 'home/index.html',
-              resolve: {
-                deps: couchPotatoProvider
-							.resolveDependencies(['home/index.js'])
-              },
-              controller: 'TrumpSlapperController as TrumpSlapperCtrl'
-            }
-          }
+        stateProvider.state('trump-slapper', {
+          templateUrl: 'home/index.html',
+          resolve: {
+            deps: couchPotatoProvider
+          .resolveDependencies(['home/index.js'])
+          },
+          controller: 'TrumpSlapperController as TrumpSlapperCtrl'
         });
-
-        for (var key in states) {
-          var state = states[key];
-          stateProvider.state(key, {
-            url: key,
-            templateUrl: '/' + state.path + '/index.html',
-            resolve: {
-              deps: couchPotatoProvider
-						.resolveDependencies(['/' + state.path + '/index.js'])
-            },
-            controller: state.controller,
-            parent: 'root'
-          });
-        }
+        $state.go('trump-slapper');
       }]);
     var bootstrapApplication = (function() {
       angular.element(document)
