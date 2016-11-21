@@ -3,7 +3,11 @@
     <div  ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
           ng-if="upgrade.visible"
           class="list-group-item">
-      <p>{{upgrade.name}} <span class="float-xs-right">{{upgrade.count}}</span></p>
+      <p>{{upgrade.name}} 
+        <span class="float-xs-right">
+          <i class="fa {{upgrade.currencyIcon}}" aria-hidden="true"></i> {{upgrade.count}}
+        </span>
+      </p>
       <div class="actions">
         <button type="button"
                 ng-repeat="powerup in upgrade.powerups track by $index" 

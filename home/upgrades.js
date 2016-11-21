@@ -3,6 +3,7 @@ define([], function() {
     {
       id: 1,
       name: 'Americans',
+      currencyIcon: 'fa-male',
       baseCost: 15,
       change: {
         perSlap: 0.1
@@ -11,6 +12,7 @@ define([], function() {
     {
       id: 2,
       name: 'Democrats',
+      currencyIcon: 'fa-male',
       baseCost: 100,
       change: {
         perSec: 1
@@ -19,6 +21,7 @@ define([], function() {
     {
       id: 3,
       name: 'Mexico',
+      currencyIcon: 'fa-male',
       baseCost: 500,
       change: {
         perSec: 4
@@ -27,6 +30,7 @@ define([], function() {
     {
       id: 4,
       name: 'Syrian Refugees',
+      currencyIcon: 'fa-male',
       baseCost: 3000,
       change: {
         perSec: 10
@@ -35,6 +39,7 @@ define([], function() {
     {
       id: 5,
       name: 'China',
+      currencyIcon: 'fa-male',
       baseCost: 10000,
       change: {
         perSec: 40
@@ -43,6 +48,7 @@ define([], function() {
     {
       id: 6,
       name: 'Scientists',
+      currencyIcon: 'fa-male',
       baseCost: 40000,
       change: {
         perSec: 100
@@ -51,6 +57,7 @@ define([], function() {
     {
       id: 7,
       name: 'Women',
+      currencyIcon: 'fa-female',
       baseCost: 200000,
       change: {
         perSec: 400
@@ -59,6 +66,7 @@ define([], function() {
     {
       id: 8,
       name: '??',
+      currencyIcon: 'fa-male',
       baseCost: 1666666,
       change: {
         perSec: 6666
