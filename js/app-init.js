@@ -34,10 +34,10 @@ define(['app', 'states'], function(app, states) {
           url: '/',
           views: {
             'main@': {
-              templateUrl: '/home/index.html',
+              templateUrl: 'home/index.html',
               resolve: {
                 deps: couchPotatoProvider
-							.resolveDependencies(['/home/index.js'])
+							.resolveDependencies(['home/index.js'])
               },
               controller: 'TrumpSlapperController as TrumpSlapperCtrl'
             }
