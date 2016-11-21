@@ -2,15 +2,12 @@ define(['app', 'states'], function(app, states) {
   var appInit = function() {
     var stateProvider;
     var couchPotatoProvider;
-    var urlRouterProvider;
     app.config(['$stateProvider', '$couchPotatoProvider',
-      '$sceDelegateProvider', '$urlRouterProvider', '$locationProvider',
+      '$sceDelegateProvider', '$locationProvider',
       function($stateProvider, $couchPotatoProvider,
-		$sceDelegateProvider, $urlRouterProvider, $locationProvider) {
+		$sceDelegateProvider, $locationProvider) {
         stateProvider = $stateProvider;
         couchPotatoProvider = $couchPotatoProvider;
-        urlRouterProvider = $urlRouterProvider;
-        urlRouterProvider.when('/jaipur', '');
         $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
@@ -31,7 +28,7 @@ define(['app', 'states'], function(app, states) {
         $rootScope.$stateParams = $stateParams;
 
         stateProvider.state('root', {
-          url: '/',
+          url: 'trump-slapper/',
           views: {
             'main@': {
               templateUrl: 'home/index.html',

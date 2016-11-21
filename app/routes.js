@@ -10,7 +10,6 @@ module.exports = {
     } else {
       filePath += '.' + req.url;
     }
-		console.log("Requesting Page: "+ filePath);
     module.exports.validatePage(res, filePath);
   },
   validatePage: function(res, filePath) {
