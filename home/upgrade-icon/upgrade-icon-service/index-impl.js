@@ -24,10 +24,10 @@ define(['lodash'], function(_) {
       var type = [];
       var damageLabel = _.cloneDeep(label);
       if (damageLabel.perSec > 0) {
-        type.push(damageLabel.perSec + ' SPS');
+        type.push(Math.round(damageLabel.perSec * 1000) / 1000 + ' SPS');
       }
       if (damageLabel.perSlap > 0) {
-        type.push(damageLabel.perSlap + ' SD');
+        type.push(Math.round(damageLabel.perSlap * 1000) / 1000 + ' SD');
       }
       var labelString = '';
       if (type.length > 1) {
