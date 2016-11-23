@@ -71,6 +71,24 @@ define([], function() {
       change: {
         perSec: 6666
       }
+    },
+    {
+      id: 9,
+      name: '??',
+      currencyIcon: 'fa-male',
+      baseCost: 1666666,
+      change: {
+        perSec: 6666
+      }
+    },
+    {
+      id: 10,
+      name: '??',
+      currencyIcon: 'fa-male',
+      baseCost: 1666666,
+      change: {
+        perSec: 6666
+      }
     }
   ];
   return Upgrades;

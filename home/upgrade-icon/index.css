@@ -14,7 +14,15 @@
 }    
 .actions{
     width:100%;
-    height:34px;
+    height:40px;
     position:relative;
     display:block;
+}
+.powerup-btn{
+    font-size:10px;
+    display:inline-block;
+}
+.powerup-btn p{
+    padding: 0;
+    margin: 0;
 }

@@ -3,7 +3,7 @@
     <div  ng-repeat="upgrade in UpgradeIconCtrl.upgradeIconService.data.upgrades track by $index" 
           ng-if="upgrade.visible"
           class="list-group-item">
-      <p>{{upgrade.name}} 
+      <p>{{upgrade.name}} || {{upgrade.label}}
         <span class="float-xs-right">
           <i class="fa {{upgrade.currencyIcon}}" aria-hidden="true"></i> {{upgrade.count}}
         </span>
@@ -11,7 +11,7 @@
       <div class="actions">
         <button type="button"
                 ng-repeat="powerup in upgrade.powerups track by $index" 
-                class="btn"
+                class="powerup-btn btn"
                 ng-class="{
                   'btn-outline-primary' : powerup.enabled && powerup.count === 0,
                   'btn-success' : powerup.count === 1 
@@ -19,7 +19,11 @@
                 ng-disabled="!powerup.enabled"
                 ng-if="powerup.visible"
                 ng-click="UpgradeIconCtrl.upgradeIconService.buyPowerup(powerup.id)">
-                <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{powerup.cost}}
+                {{powerup.label}}
+                <p>
+                  <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{powerup.cost}} | 
+                  <i class="fa {{upgrade.currencyIcon}}" aria-hidden="true"></i> {{powerup.level}}
+                </p>
         </button>
         <button type="button"
                 class="btn btn-secondary float-xs-right"
