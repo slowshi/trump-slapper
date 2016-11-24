@@ -21,7 +21,7 @@
                 ng-click="UpgradeIconCtrl.upgradeIconService.buyPowerup(powerup.id)">
                 {{powerup.label}}
                 <p>
-                  <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{powerup.cost}} | 
+                  <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{powerup.formattedCost}} | 
                   <i class="fa {{upgrade.currencyIcon}}" aria-hidden="true"></i> {{powerup.level}}
                 </p>
         </button>
@@ -29,7 +29,7 @@
                 class="btn btn-secondary float-xs-right"
                 ng-disabled="!upgrade.enabled"
                 ng-click="UpgradeIconCtrl.upgradeIconService.buyUpgrade(upgrade.id)">
-              <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{upgrade.cost}}
+              <i class="fa fa-hand-paper-o" aria-hidden="true"></i> {{upgrade.formattedCost}}
         </button>
       </div>
     </div>

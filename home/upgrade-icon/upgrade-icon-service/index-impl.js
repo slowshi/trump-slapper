@@ -1,7 +1,10 @@
-define(['lodash'], function(_) {
+define(['lodash', 'numeral'], function(_, numeral) {
   var UpgradeIconService = function(storeService) {
     var data = {
       upgrades: []
+    };
+    var formatNumber = function formatNumber(number) {
+      return numeral(number).format('0[.]0[0]a');
     };
     var getPowerupLabel = function getPowerupLabel(change) {
       var type = [];
@@ -24,10 +27,10 @@ define(['lodash'], function(_) {
       var type = [];
       var damageLabel = _.cloneDeep(label);
       if (damageLabel.perSec > 0) {
-        type.push(Math.round(damageLabel.perSec * 1000) / 1000 + ' SPS');
+        type.push(formatNumber(Math.round(damageLabel.perSec * 1000) / 1000) + ' SPS');
       }
       if (damageLabel.perSlap > 0) {
-        type.push(Math.round(damageLabel.perSlap * 1000) / 1000 + ' SD');
+        type.push(formatNumber(Math.round(damageLabel.perSlap * 1000) / 1000) + ' SD');
       }
       var labelString = '';
       if (type.length > 1) {
@@ -44,7 +47,8 @@ define(['lodash'], function(_) {
       for (var i = 0; i < upgrades.length; i++) {
         var upgrade = upgrades[i];
         upgrade.cost =
-          Math.ceil(upgrade.baseCost * Math.pow(1.07, upgrade.count));
+        Math.ceil(upgrade.baseCost * Math.pow(1.07, upgrade.count));
+        upgrade.formattedCost = formatNumber(upgrade.cost);
         upgrade.enabled = scoreboard.slaps >= upgrade.cost;
         upgrade.visible = scoreboard.highestUpgrade >= i;
         upgrade.labelObj = {
@@ -67,6 +71,7 @@ define(['lodash'], function(_) {
         }
         for (var k = 0; k < upgrade.powerups.length; k++) {
           var upgradePowerup = upgrade.powerups[k];
+          upgradePowerup.formattedCost = formatNumber(upgradePowerup.cost);
           if (upgradePowerup === 1) {
             if (typeof upgradePowerup.change.perSlap !== 'undefined') {
               powerupChange.perSlap += upgradePowerup.change.perSlap;
